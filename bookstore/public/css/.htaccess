@@ -1,0 +1,17 @@
+# Force correct MIME type for CSS files
+<Files "*.css">
+    ForceType text/css
+</Files>
+
+# Ensure CSS files are not processed by PHP
+<Files "*.css">
+    SetHandler text/css
+</Files>
+
+# Add proper headers
+<IfModule mod_headers.c>
+    <Files "*.css">
+        Header set Content-Type "text/css; charset=utf-8"
+        Header set Cache-Control "max-age=31536000, public"
+    </Files>
+</IfModule>

@@ -1,0 +1,15 @@
+# Chỉ định file mặc định
+DirectoryIndex index.php
+
+# Bật RewriteEngine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Thiết lập base path
+    RewriteBase /bookstore/public/
+    
+    # Ép tất cả các request qua index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>

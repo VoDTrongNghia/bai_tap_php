@@ -1,0 +1,3 @@
+<?php
+// Header include
+// ...existing code...

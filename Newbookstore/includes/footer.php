@@ -1,0 +1,3 @@
+<?php
+// Footer include
+// ...existing code...

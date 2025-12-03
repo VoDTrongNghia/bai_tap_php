@@ -1,0 +1,398 @@
+/* Gifts Page Styles */
+
+/* Page Header */
+.gifts-header {
+    background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+/* Categories Section */
+.gifts-categories-section {
+    padding: 60px 0;
+    background: white;
+}
+
+.gifts-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.gift-category-card {
+    text-align: center;
+    padding: 40px 24px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.gift-category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.gift-category-card:hover::before {
+    opacity: 1;
+}
+
+.gift-category-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.gift-category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(233, 30, 99, 0.2);
+}
+
+.gift-category-card:hover .gift-category-icon,
+.gift-category-card:hover .gift-category-name,
+.gift-category-card:hover .gift-category-description,
+.gift-category-card:hover .gift-category-count {
+    color: white;
+}
+
+.gift-category-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e91e63;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.gift-category-name {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--text);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.gift-category-description {
+    color: var(--text-light);
+    margin-bottom: 16px;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.gift-category-meta {
+    margin-bottom: 20px;
+}
+
+.gift-category-count {
+    background: rgba(233, 30, 99, 0.1);
+    color: #e91e63;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.gift-category-card:hover .gift-category-count {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.gift-category-link {
+    color: #e91e63;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.gift-category-card:hover .gift-category-link {
+    color: white;
+    gap: 10px;
+}
+
+/* Featured Products Section */
+.gifts-featured-section {
+    padding: 60px 0;
+    background: #fafafa;
+}
+
+.gifts-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.gift-product-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.gift-product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.gift-product-image {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.gift-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gift-product-card:hover .gift-product-image img {
+    transform: scale(1.08);
+}
+
+.gift-product-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #e91e63;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+}
+
+.gift-product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gift-product-card:hover .gift-product-overlay {
+    opacity: 1;
+}
+
+.gift-quick-view-btn,
+.gift-wishlist-btn {
+    background: white;
+    color: #e91e63;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+}
+
+.gift-product-card:hover .gift-quick-view-btn,
+.gift-product-card:hover .gift-wishlist-btn {
+    transform: translateY(0);
+}
+
+.gift-quick-view-btn:hover,
+.gift-wishlist-btn:hover {
+    background: #e91e63;
+    color: white;
+}
+
+.gift-wishlist-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gift-product-content {
+    padding: 24px;
+}
+
+.gift-product-name {
+    margin-bottom: 8px;
+}
+
+.gift-product-name a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.gift-product-name a:hover {
+    color: #e91e63;
+}
+
+.gift-product-description {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.gift-product-price {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.gift-old-price {
+    color: var(--text-light);
+    text-decoration: line-through;
+    font-size: 0.95rem;
+}
+
+.gift-current-price {
+    color: #e91e63;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.gift-product-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.gift-stars {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+.gift-rating-count {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.gift-add-to-cart-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.gift-add-to-cart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.3);
+}
+
+/* Special Offers Section */
+.gifts-offers-section {
+    padding: 60px 0;
+    background: white;
+}
+
+.gifts-offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gift-offer-card {
+    background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.gift-offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    border-color: #e91e63;
+}
+
+.gift-offer-content h3 {
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.gift-offer-content p {
+    color: var(--text-light);
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.gift-offer-btn {
+    background: #e91e63;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.gift-offer-btn:hover {
+    background: #d81b60;
+    transform: translateY(-2px);
+}
+
+.gift-offer-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9remuteur
+   .
+    
+   Exceeded maximum response length."/>
+</div>
